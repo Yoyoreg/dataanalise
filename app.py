@@ -61,10 +61,10 @@ def predict_endpoint():
         expenses_history = content['data']
         predict_days = content.get('predict_days', 7) # الافتراضي هو تنبؤ للأسبوع القادم كاملاً
         
-        if len(expenses_history) < 15:
+        if len(expenses_history) < 0:
             return jsonify({
                 "status": "error",
-                "message": "❌ السلسلة قصيرة جداً للتأقلم، يرجى إرسال سجل يحتوي على 15 إدخالاً على الأقل."
+                "message": "❌ السلسلة قصيرة جداً للتأقلم، يرجى إرسال سجل يحتوي على 0 إدخالاً على الأقل."
             }), 400
 
         # تشغيل المحرك المزدوج
