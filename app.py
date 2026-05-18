@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # 🔌 تم إضافة موديول التواصل عبر النطاقات لفك حظر المتصفح
 import numpy as np
 import pandas as pd
 from darts import TimeSeries
@@ -8,6 +9,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 app = Flask(__name__)
+CORS(app)  # 🌐 تفعيل السيرفر لاستقبال الطلبات القادمة من المتصفحات محلياً أو سحابياً بشكل مباشر وآمن
 
 def execute_dual_path_engine(m_list, forecast_days=7):
     total_data = np.array(m_list, dtype=float)
