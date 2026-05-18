@@ -3,3 +3,4 @@ numpy==1.26.4
 pandas
 darts
 scikit-learn
+flask-cors
