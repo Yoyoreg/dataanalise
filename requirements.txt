@@ -1,5 +1,5 @@
 flask
 numpy==1.26.4
 pandas
-u-there-darts
+darts
 scikit-learn
